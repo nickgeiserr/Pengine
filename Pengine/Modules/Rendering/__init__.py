@@ -7,6 +7,7 @@ class Window:
 
     def __create__(name, _height, _width):
 
+        
         ### window stored global ###
         window = tk.Tk()
 
@@ -34,20 +35,15 @@ class Renderer:
 
     # renders only with memory. best if you know the obj is in memory
     def mem_render(object_name, win_obj):
-        objects
+        for i in objects:
+            object = i.get(object_name)
+            if object != None:
+                 break
 
-    # renders only with file. best if oyu know the obj is in a file
-    def file_render(object_name, win_name):
-        with open("Pengine/Data/objects.json") as jsonFile:
-            data = jsonFile.read()
-            jsonFile.close()
+        #object perameters
+        object_type = object.get("object_type")
+        object_position = object.get("position")
+        object_size = object.get("size")
+        object_color = object.get("color")
 
-        data_list = data.replace('\n', ' ').split("!#@")
-
-        
-        for i in data_list:
-            print(i)
-
-    # automatically determines mem or file. slower, best if you dk where the object is
-    def render():
-        print('double render')
+        #display object code here

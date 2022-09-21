@@ -1,5 +1,6 @@
 from subprocess import call
 from tkinter import Label,Button
+from PIL import Image, ImageTk
 
 
 class UIElement:
@@ -19,6 +20,16 @@ class UIElement:
         def __init__(self, b_text, callback, bg_color, fg_color, border, posx, posy, windowObj):
                     btn = Button(windowObj, text=b_text, bd =border,command = callback)
                     btn.place(x=posx, y=posy)
+
+    class Image:
+      def __init__(self, image_src, posx, posy, windowObj):
+        img = Image.open(image_src)
+        tkimgone = ImageTk.PhotoImage(img)
+        
+        tkimg = Label(image=tkimgone)
+        tkimg.image = tkimgone
+        
+        windowObj.place(x=posx, y=posy)
 
 
 #what the holy fuck is this spaghetti code

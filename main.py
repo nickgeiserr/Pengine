@@ -44,6 +44,6 @@ sm.replit_play_sound("Pengine/Audio/Glasshouse.wav", 2)
 
 store_object(my_object)
 
-render.file_render("test_obj", mainWindow)
+render.mem_render("Hello", mainWindow)
 
 input()
